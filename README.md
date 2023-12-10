@@ -33,7 +33,7 @@ Data were retrieved on 10th December 2023 from Romanian Car selling platform.
 5. Create web scrapper using Beautiful Soup library and Pandas for save to CSV file.
 6. Apply data_scrapper.
 
-![Raw Dataset.](/media/image_1.png "Raw Dataset")
+![Raw Dataset.](media/image_1.PNG "Raw Dataset")
 
 
 2. #### Data understanding
