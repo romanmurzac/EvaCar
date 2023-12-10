@@ -31,10 +31,10 @@ Data were retrieved on 10th December 2023 from Romanian Car selling platform.
 3. Analyze source HTML structure, identify necessary HTML elements and HTML classes.
 4. Create schema with desired columns that will be retrieved from source.
 5. Create web scrapper using Beautiful Soup library and Pandas for save to CSV file.
-6. Apply data_scrapper.
+6. Build scenario to retrieve necessary data.
+7. Apply data_scrapper scenario.
 
 ![Raw Dataset.](media/image_1.PNG "Raw Dataset")
-
 
 2. #### Data understanding
 3. #### Data preparation

@@ -108,18 +108,18 @@ def convert_str_to_int(raw_data: list, clean_mode: bool) -> list:
     return int_list
 
 
-def save_to_csv(file_name: str, column_names: list, *args) -> None:
+def save_to_csv(file_name: str, column_names: list, data_series: list) -> None:
     """
     Convert lists in Pandas DataFrame and save it in a CSV file.
         Parameters:
             file_name (str): CSV file name where to save data
             column_names (list): list with columns name
-            args (bool): lists
+            data_series (list): list with data list names
         Returns:
             None
     """
     # Convert lists to DataFrame
-    df = pd.DataFrame(list(zip(*args)), columns=column_names)
+    df = pd.DataFrame(list(zip(element_lists)), columns=column_names)
 
     # Save DataFrame to CSV file
     df.to_csv(f"{file_name}.csv", sep=',', encoding='utf-8', index=False, header=False, mode="a")
