@@ -17,7 +17,22 @@ The dataset contains data available on 10th December 2023 on Car Seller Platform
 ### Statements
 
 1. #### Business understanding
+Business questions:
+1. How many cars are used in the analyze?
+2. Which is the most expensive car?
+3. Which is the most cheap car?
+4. Which manufacturer has more cars?
+5. Which model has more cars?
+6. Which manufacturer is most expensive at average?
+7. Which manufacturer is most cheap at average?
+8. In which county are selling most cars?
+9. Which type of fuel is most selling?
+10. How many cars are manufactured in current year?
+11. Which is the biggest engine capacity?
+12. Which is the biggest milleage?
+
 2. #### Analytic approach
+
 3. #### Data requirements
 
 ### Data processing
@@ -26,7 +41,7 @@ The dataset contains data available on 10th December 2023 on Car Seller Platform
 Data collection was performed with internal tool --> data_scrapper.\
 Data were retrieved on 10th December 2023 from Romanian Car selling platform.
 #### Stages
-1. Identify online resources that sell cars in Romania, e.g. Autovit, OLX, Lajumate, Bestauto, etc.
+1. Identify online resources that sell cars in Romania.
 2. Create a list with all available cars.
 3. Analyze source HTML structure, identify necessary HTML elements and HTML classes.
 4. Create schema with desired columns that will be retrieved from source.
