@@ -19,17 +19,15 @@ The dataset contains data available on 10th December 2023 on Car Seller Platform
 1. #### Business understanding
 Business questions:
 1. How many cars are used in the analyze?
-2. Which is the most expensive car?
-3. Which is the most cheap car?
-4. Which manufacturer has more cars?
-5. Which model has more cars?
-6. Which manufacturer is most expensive at average?
-7. Which manufacturer is most cheap at average?
-8. In which county are selling most cars?
-9. Which type of fuel is most selling?
-10. How many cars are manufactured in current year?
-11. Which is the biggest engine capacity?
-12. Which is the biggest milleage?
+2. Which is the most expensive / cheapest car?
+3. Which manufacturer / model has more / less cars?
+4. Which manufacturer / model is most expensive / cheapest at average?
+5. In which county / city are selling most cars?
+6. Which type of fuel is most / fewest selling?
+7. Which is the biggest / smallest engine capacity?
+8. Which is the biggest / smallest milleage?
+9. How many cars are manufactured in current year?
+
 
 2. #### Analytic approach
 
