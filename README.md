@@ -163,18 +163,18 @@ In Exploratory Data Analysis stage will be answered business questions 1-10.
 - Number of cars used in current analyze is equal to 36534 cars.
 2. Which is the most expensive / cheapest car?
 - The most expensive car in current analyze is Ferrari Purosangue that costs 918680 EUR.
-![Final Analytic Description.](media/image_6.PNG "Final Analytic Description")
+![Most expensive car.](media/image_6.PNG "Most expensive car")
 - The cheapest car in current analyze is Volkswagen Golf that costs 300 EUR.
-![Final Analytic Description.](media/image_7.PNG "Final Analytic Description")
+![Cheapest car.](media/image_7.PNG "Cheapest car")
 3. Which manufacturer / model has more / less cars?
 - Manufacturer with the most cars is Mercedes-Benz with 4857 cars.
-![Final Analytic Description.](media/image_8.PNG "Final Analytic Description")
+![Manufacturer with the most cars.](media/image_8.PNG "Manufacturer with the most cars")
 - The most cars are of model Passat with 1144 cars.
-![Final Analytic Description.](media/image_9.PNG "Final Analytic Description")
+![Model with the most cars.](media/image_9.PNG "Model with the most cars")
 - Manufacturer with most cars is Ineos with 1 cars.
-![Final Analytic Description.](media/image_10.PNG "Final Analytic Description")
+![Manufacturer with the fewest cars.](media/image_10.PNG "Manufacturer with the fewest cars")
 - Model with fewest cars is M2 M235i with 1 cars.
-![Final Analytic Description.](media/image_11.PNG "Final Analytic Description")
+![Model with the fewest cars.](media/image_11.PNG "Model with the fewest cars")
 4. Which manufacturer / model is most expensive / cheapest at average?
 - The most expensive manufacturer at average is Rolls-Royce with average price of 364534.1 EUR/car.
 - The most expensive model at average is Purosangue with average price of 918680.0 EUR/car.
