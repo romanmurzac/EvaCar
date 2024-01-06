@@ -224,4 +224,50 @@ In Exploratory Data Analysis stage will be answered business questions 1-11.
 ![Correlation of the features.](media/image_22.PNG "Correlation of the features")
 
 12. Which is the predicted price of the care based on specific characteristics?
-- TBA
+![Influence of the features.](media/image_23.PNG "Influence of the features")
+- For the car with follow speicifications:
+    manufacturer: Audi;
+    model: Q3;
+    mileage: 200000 km;
+    capacity: 1986 cm3;
+    power: 177 HP;
+    year: 2015;
+    fuel: Diesel,
+    the estimated price is: 15266 EUR.
+
+### 6. Data preparation
+Prediction model is build using Python notebook ***data_predictor.ipynb*** using data from ***ProcessedDataDB-YY-MM-DD.csv*** file.\
+From correlation analysis it was decided to delete *currency*, *status*, *county*, *city* columns.\
+Separated dependend and independent variables: *price* as **y** and *manufacturer*, *model*, *capacity*, *mileage*, *power*, *year*, *fuel* as **X**.\
+Categorical variables from *manufacturer*, *model*, *fuel* were encoded to numerical variables.
+
+### 7. Modeling
+The dataset was splited into the Training and Test sets.\
+The features of the datasets *X_train* and *X_test* were standardized.\
+Was created the K-Nearest Neighbors Regressor.\
+Was trained the K-Nearest Neighbors Regressor on *X_train* dataset.\
+Made predictions for *y_pred* based on *X_test* dataset.
+
+### 8. Evaluation
+The model was evaluated.\
+Was measured the Mean Squared Error.\
+Was transformed and standardized new values for prediction.\
+Was made brand new prediction.
+
+### 9. Deployment
+Work in Progress
+
+### 10. Feedback
+Collected feedback from users.
+|Area|How is it now|How should be|Type|Observations|
+|:---:|:---:|:---:|:---:|:---:|
+|Repository|Incomplete|Complete|Documentation|Work in Progress|
+|Code|Unorganized|Clean|Code|Refactor code|
+|-|-|-|-|-|
+|-|-|-|-|-|
+|-|-|-|-|-|
+|-|-|-|-|-|
+|-|-|-|-|-|
+|-|-|-|-|-|
+|-|-|-|-|-|
+|-|-|-|-|-|
