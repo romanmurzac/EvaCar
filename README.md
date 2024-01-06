@@ -60,15 +60,16 @@ The main goal of this study is to highlights trends in Romanian second-hand car'
 6. Which type of fuel is most / fewest selling?
 7. Which is the biggest / smallest engine capacity?
 8. Which is the biggest / smallest milleage?
-9. How many cars are manufactured in current year?
-10. Which manufacturer / model is most / least devalued?
-11. Which is the predicted price of the care based on specific characteristics?
+9. Which is the biggest / smallest power?
+10. How many cars are manufactured in current year?
+11. How features are correlated to each other?
+12. Which is the predicted price of the care based on specific characteristics?
 
 All questions will be answered in code, implemented in web application, and highlighted in the Final Report.
 
 ### 2. Analytic approach
-It will be used the Statistical analysis to answer business questions 1-10. It will be used Python programming language, Numpy, Pandas, and Matplotlib for data analyze and vizualization.\
-It will be used Regression algorithms to answer business question 11. It will be used Python programming language, SciPy, scikit-learn libraries.\
+It will be used the Statistical analysis to answer business questions 1-11. It will be used Python programming language, Numpy, Pandas, and Matplotlib for data analyze and vizualization.\
+It will be used Regression algorithms to answer business question 12. It will be used Python programming language, SciPy, scikit-learn libraries.\
 It will be used Python, Plotly, and Dash for web application.
 
 ### 3. Data requirements
@@ -158,41 +159,69 @@ Data was processed using Python notebook ***data_analyzer.ipynb*** and saved in 
 
 ### 5. Data understanding
 #### Exploratory Data Analysis
-In Exploratory Data Analysis stage will be answered business questions 1-10.
+In Exploratory Data Analysis stage will be answered business questions 1-11.
+
 1. How many cars are used in the analyze?
-- Number of cars used in current analyze is equal to 36534 cars.
+- Number of cars used in the current analyze is equal to 36534 cars.
+
 2. Which is the most expensive / cheapest car?
 - The most expensive car in current analyze is Ferrari Purosangue that costs 918680 EUR.
 ![Most expensive car.](media/image_6.PNG "Most expensive car")
 - The cheapest car in current analyze is Volkswagen Golf that costs 300 EUR.
 ![Cheapest car.](media/image_7.PNG "Cheapest car")
+
 3. Which manufacturer / model has more / less cars?
 - Manufacturer with the most cars is Mercedes-Benz with 4857 cars.
 ![Manufacturer with the most cars.](media/image_8.PNG "Manufacturer with the most cars")
 - The most cars are of model Passat with 1144 cars.
 ![Model with the most cars.](media/image_9.PNG "Model with the most cars")
-- Manufacturer with most cars is Ineos with 1 cars.
+- Manufacturer with the fewest cars is Ineos with 1 cars.
+- Model with the fewest cars is M2 M235i with 1 cars.
 ![Manufacturer with the fewest cars.](media/image_10.PNG "Manufacturer with the fewest cars")
-- Model with fewest cars is M2 M235i with 1 cars.
-![Model with the fewest cars.](media/image_11.PNG "Model with the fewest cars")
+
 4. Which manufacturer / model is most expensive / cheapest at average?
 - The most expensive manufacturer at average is Rolls-Royce with average price of 364534.1 EUR/car.
+![Manufacturer with most expensive average cars.](media/image_11.PNG "Manufacturer with most expensive average cars")
 - The most expensive model at average is Purosangue with average price of 918680.0 EUR/car.
+![Model with most expensive average cars.](media/image_12.PNG "Model with most expensive average cars")
 - The cheapest manufacturer at average is Daewoo with average price of 1229.6 EUR/car.
+![Manufacturer with cheapest average cars.](media/image_13.PNG "Manufacturer with cheapest average cars")
 - The cheapest model at average is Vaneo 1.6 with average price of 750.0 EUR/car.
+![Model with cheapest average cars.](media/image_14.PNG "Model with cheapest average cars")
+
 5. In which county / city are selling most cars?
 - The most cars are in Bucuresti county with 12848 cars.
+![County with the most sold cars.](media/image_15.PNG "County with the most sold cars")
 - The most cars are in Bucuresti city with 8696 cars.
+![City with the most sold cars.](media/image_16.PNG "City with the most sold cars")
+
 6. Which type of fuel is most / fewest selling?
 - The most cars with total number of 22736 cars are used Diesel fuel.
 - The fewest cars with total number of 18 cars are used Benzina + CNG fuel.
+![Number of sold cars by fuel.](media/image_17.PNG "Number of sold cars by fuel")
+
 7. Which is the biggest / smallest engine capacity?
 - The max capacity of 8200 HP has Cadillac Eldorado.
-- The max capacity of 0 HP has Aixam City.
+- The max capacity of 5 HP has Aixam Coupe.
+![Number of sold cars by fuel.](media/image_18.PNG "Number of sold cars by fuel")
+
 8. Which is the biggest / smallest milleage?
 - The max mileage of 2800000 KM has BMW X5 xDrive30d.
 - The min mileage of 0 KM has Aixam Crossover.
-9. How many cars are manufactured in previous and current year?
+![Number of sold cars by mileage.](media/image_19.PNG "Number of sold cars by mileage")
+
+9. Which is the biggest / smallest power?
+- The max power of 1020 HP has Tesla Model S.
+- The min power of 5 HP has Aixam Coupe.
+![Number of sold cars by power.](media/image_20.PNG "Number of sold cars by power")
+
+10. How many cars are manufactured in previous and current year?
 - Number of cars that were manufactured in 2023 is 2782.
-10. Which manufacturer / model is most / least devalued?
-- TBA.
+![Number of sold cars by year.](media/image_21.PNG "Number of sold cars by year")
+
+11. How features are correlated to each other?
+ - Feature that influence price the most is Power with correlation coefficient of 0.76.
+![Correlation of the features.](media/image_22.PNG "Correlation of the features")
+
+12. Which is the predicted price of the care based on specific characteristics?
+- TBA
