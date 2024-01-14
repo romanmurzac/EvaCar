@@ -1,3 +1,4 @@
 .idea
-/var_const/variables.py
-*.csv
+venv/
+*.docx
+app/
