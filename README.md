@@ -1,6 +1,6 @@
 # EvaCar
 
-## Evaluation & Prediction on the second-hand Car market in Romanian
+## Evaluation & Prediction on the second-hand Car market in Romania
 
 ## Description
 
@@ -91,7 +91,7 @@ For current study dataset should contains follow columns:
 - long description - string - long description of the car.
 
 #### Web scraping
-Data was obtained using web scraping process using internal tool ***data_scraper.py*** implemented in main program ***main.py*** and saved in CSV format as ***RawDataDB-YY-MM-DD.csv*** file follow next stages:
+Data was obtained using web scraping process using internal tool ***data_scraper.py*** and saved in CSV format as ***RawDataDB-YY-MM-DD.csv*** file follow next stages:
 - Identify online resources that sell cars in Romania.
 - Create a list with all available cars.
 - Analyze source HTML structure, identify necessary HTML elements and HTML classes.
@@ -107,7 +107,7 @@ Data was obtained using web scraping process using internal tool ***data_scraper
 |No|Name|Date|Counts [rows]|Size [kB]|
 |:---:|:---:|:---:|:---:|:---:|
 |1|RawDataDB-23-12-10.csv|10.12.2023|36534|5554|
-|2|-|10.01.2024|-|-|
+|2|RawDataDB-24-01-10.csv|10.01.2024|36292|6155|
 |3|-|10.02.2024|-|-|
 |4|-|10.03.2024|-|-|
 |5|-|10.04.2024|-|-|
@@ -137,13 +137,14 @@ Missing values will be replaced with value zero and will be neglected in count o
 ![Final Dataset information.](media/image_5.PNG "Final Dataset information")
 
 #### Data processing
-Data was processed using Python notebook ***data_analyzer.ipynb*** and saved in CSV format as ***ProcessedDataDB-YY-MM-DD.csv*** file.
+Data was processed using Python notebook ***data_processor.ipynb*** and saved in CSV format as ***ProcessedDataDB-YY-MM-DD.csv*** file.
+Data was analyzed using Python notebook ***data_analyzer.ipynb*** and saved in PDF format as ***EvaCar_Report_N.pdf*** file.
 
 #### Processed data history
 |No|Name|Date|Counts [rows]|Size [kB]|
 |:---:|:---:|:---:|:---:|:---:|
 |1|ProcessedDataDB-23-12-10.csv|10.12.2023|36534|3090|
-|2|-|10.01.2024|-|-|
+|2|ProcessedDataDB-24-01-10.csv|10.01.2024|36292|2471|
 |3|-|10.02.2024|-|-|
 |4|-|10.03.2024|-|-|
 |5|-|10.04.2024|-|-|
@@ -263,9 +264,9 @@ Collected feedback from users.
 |:---:|:---:|:---:|:---:|:---:|
 |Repository|Incomplete|Complete|Documentation|Work in Progress|
 |Code|Unorganized|Clean|Code|Refactor code|
-|-|-|-|-|-|
-|-|-|-|-|-|
-|-|-|-|-|-|
+|Source|Autovit|olx|Code|To be connected|
+|Source|Second hand cars|New cars|Code|To be analyzed|
+|Web App|Not available|Available|Code|Work in Progress|
 |-|-|-|-|-|
 |-|-|-|-|-|
 |-|-|-|-|-|

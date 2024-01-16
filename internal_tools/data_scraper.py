@@ -1,8 +1,13 @@
-from bs4 import BeautifulSoup
+# Import necessary modules
 import requests
 import pandas as pd
 
+from datetime import datetime
+from bs4 import BeautifulSoup
 
+from . import source_url, raw_schema, html_elements, html_classes, car_pages
+
+# Define functionalities
 def get_raw_data(endpoint: str, html_element: str, html_class: str) -> list:
     """
     Provide URL, specific HTML element and class, and return list with all data.
@@ -27,103 +32,47 @@ def get_raw_data(endpoint: str, html_element: str, html_class: str) -> list:
     return raw_data
 
 
-def select_list_elements(raw_data: list, index: int, step: int) -> list:
+def get_date():
     """
-    Take a list and extract elements from a specific index and with specific step.
-        Parameters:
-            raw_data (list): initial elements
-            index (int): starting index of extracting
-            step (int): step of extracting elements
+    Get current date in specific format: YY-MM-DD.
         Returns:
-            extracted_elements (list): extracted data
-    """
-    # Extract elements with specific step from a list
-    extracted_elements = raw_data[index::step]
+            specific_date (str): retrieved data
+    """ 
+    year = str(datetime.datetime.now().year)[-2:]
+    month = str(datetime.datetime.now().month)
+    day = str(datetime.datetime.now().day)
+    if len(month) == 1:
+        month = "0" + month
+    if len(day) == 1:
+        day = "0" + day
+    specific_date = f"{year}-{month}-{day}"
+    return specific_date
 
-    # Return list with data
-    return extracted_elements
+current_date = get_date()
 
+# Iterate through all cars manufacturer and available number of pages
+for key in range(1, len(list(car_pages.keys()))):
+    for index in range(1, car_pages[key][1]+1):
+        try:
+            # Define endpoint
+            endpoint_url = f"{source_url}/{car_pages[key][0]}?page={index}"
 
-def split_str_to_elem(raw_data: list, splitter: str, initial_index: int, final_index: int) -> list:
-    """
-    Split list elements on custom splitter and return specific part of it.
-        Parameters:
-            raw_data (list): initial list
-            splitter (str): symbol that serve as splitter
-            initial_index (int): starting index of element to be kept
-            final_index (int): final index of element to be kept
-        Returns:
-            split_list (list): split data
-    """
-    # Iterate through list and split each element on specific splitter
-    split_list = []
-    for element in raw_data:
-        split_element = element.split(splitter)[initial_index:final_index]
+            # Extract data based on endpoint, specific HTML element and class
+            first_data = get_raw_data(endpoint=endpoint_url, element=html_elements[1], html_class=html_classes[1])
+            second_data = get_raw_data(endpoint=endpoint_url, element=html_elements[2], html_class=html_classes[2])
+            third_data = get_raw_data(endpoint=endpoint_url, element=html_elements[3], html_class=html_classes[3])
+            fourth_data = get_raw_data(endpoint=endpoint_url, element=html_elements[4], html_class=html_classes[4])[::2]
+            fifth_data = get_raw_data(endpoint=endpoint_url, element=html_elements[3], html_class=html_classes[5])
 
-        # Create new element
-        if len(split_element) > 1:
-            item = " ".join(split_element)
-        elif len(split_element) != 0:
-            item = split_element[0]
-        else:
-            item = split_element
-        split_list.append(item)
-
-    # Return list with data
-    return split_list
-
-
-def convert_str_to_int(raw_data: list, clean_mode: bool) -> list:
-    """
-    Eliminate unnecessary part of a string and convert it into integer.
-        Parameters:
-            raw_data (list): initial list
-            clean_mode (bool): eliminate or not a part of the string
-        Returns:
-            int_list (list): casted data
-    """
-    # Iterate through list elements
-    int_list = []
-    for element in raw_data:
-
-        # Split elements by empty space
-        split_list = element.split(" ")
-
-        # Check how many new elements were resulted
-        if len(split_list) > 1:
-
-            # Build new element from all resulted elements
-            # Excluding last one in clean mode
-            if clean_mode:
-                int_element = int("".join(split_list[:-1]))
-            else:
-                int_element = int("".join(split_list))
-        elif len(split_list) != 0:
-            int_element = int(split_list[0])
-        else:
-            int_element = int(split_list)
-        int_list.append(int_element)
-
-    # Return list with data
-    return int_list
-
-
-def save_to_csv(file_name: str, column_names: list, data_series: list) -> None:
-    """
-    Convert lists in Pandas DataFrame and save it in a CSV file.
-        Parameters:
-            file_name (str): CSV file name where to save data
-            column_names (list): list with columns name
-            data_series (list): list with data list names
-        Returns:
-            None
-    """
-    # Convert lists to DataFrame
-    df = pd.DataFrame(list(zip(element_lists)), columns=column_names)
-
-    # Save DataFrame to CSV file
-    df.to_csv(f"{file_name}.csv", sep=',', encoding='utf-8', index=False, header=False, mode="a")
-
+            # Create Pandas dataframe and save it to CSV file
+            df = pd.DataFrame(list(zip(first_data, second_data, third_data, fourth_data, fifth_data)), columns=raw_schema)
+            df.to_csv(f"RawDataDB-{current_date}.csv", sep=',', encoding='utf-8', index=False, header=False, mode="a")
+            print(f"Uploaded page no.: {index} from {car_pages[key][0]} manufacturer.")
+        
+        # Skip pages with issues and continue for rest of the pages
+        except Exception:
+            print(f"Skipped page no.: {index} from {car_pages[key][0]} manufacturer.")
+            continue
 
 # Run file as a script
 if __name__ == "__main__":
