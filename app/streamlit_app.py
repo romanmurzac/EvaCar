@@ -9,7 +9,7 @@ import os
 # Define constants and variables
 DATA_SOURCE = {"December 2023": "23-12-10",
                "January 2024": "24-01-10",}
-full_path = dir_path = os.path.dirname(os.path.realpath(__file__))
+dir_path = os.path.dirname(os.path.realpath(__file__))
 
 
 # Define function to read data
@@ -27,7 +27,7 @@ def select_value() -> str:
 # Set up page characteristics
 st.set_page_config(
     page_title="EvaCar",
-    page_icon="favicon.ico",
+    page_icon=dir_path + "/favicon.ico",
     layout="wide",
     initial_sidebar_state="expanded",
     menu_items={
