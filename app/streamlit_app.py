@@ -14,7 +14,7 @@ full_path = dir_path = os.path.dirname(os.path.realpath(__file__))
 
 # Define function to read data
 def select_dataset(dataset_name: str) -> pd.DataFrame:
-    full_path = dir_path + f"data/ProcessedDataDB-{DATA_SOURCE[dataset_name]}.csv"
+    full_path = dir_path + f"/data/ProcessedDataDB-{DATA_SOURCE[dataset_name]}.csv"
     return pd.read_csv(full_path)
 
 
@@ -38,12 +38,12 @@ st.set_page_config(
 )
 
 # Link the CSS file
-with open(dir_path + "style.css") as f:
+with open(dir_path + "/style.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 # *****SIDEBAR*****
 # Sidebar - add logo and description
-st.sidebar.image(dir_path + 'logo.png', caption='Evaluation & Prediction of Romanian second-hand car market')
+st.sidebar.image(dir_path + '/logo.png', caption='Evaluation & Prediction of Romanian second-hand car market')
 st.sidebar.markdown("""---""")
 
 # Sidebar - select data source
