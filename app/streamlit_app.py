@@ -5,13 +5,6 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 
-from sklearn.compose import ColumnTransformer
-from sklearn.preprocessing import OneHotEncoder
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-from sklearn.neighbors import KNeighborsRegressor
-from sklearn.metrics import mean_squared_error
-
 # Import internal utilities
 from predictor import make_prediction
 
