@@ -21,8 +21,9 @@ def make_prediction(dataset, user_values):
 
     # Encode the independent categorical variables
     ct = ColumnTransformer(transformers=[('encoder', OneHotEncoder(sparse_output=False, handle_unknown="ignore"), [0,1,6])], remainder='passthrough')
-    ct.set_output(transform="pandas")
-    X = np.array(ct.fit_transform(X))
+    X = ct.fit_transform(X)
+    column_names = ct.get_feature_names_out(['manufacturer', 'model', 'mileage', 'capacity', 'power', 'year', 'fuel'])
+    X = pd.DataFrame(X, columns=column_names)
 
     # Split the dataset into the Training and Test sets
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25, random_state = 0)
