@@ -1,14 +1,19 @@
 # *****IMPORTS*****
-# Import necessary packages
+# Import external packages
+import os
 import streamlit as st
 import pandas as pd
 import altair as alt
-import os
+
+# Import internal utilities
+from predictor import make_prediction
 
 # *****UTILITIES*****
-# Define constants and variables
+# Define datasource mapping
 DATA_SOURCE = {"December 2023": "23-12-10",
                "January 2024": "24-01-10",}
+
+# Define path of the app location
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
 
@@ -150,23 +155,29 @@ st.altair_chart(alt.Chart(avg_price).mark_line().encode(
 
 
 # *****PREDICTION*****
-# # Define user inputs
-# predict_brand = st.selectbox("Select Brand", list(dataset["manufacturer"].unique()))
-# predict_model = st.selectbox("Select Model", list(dataset[dataset["manufacturer"] == predict_brand]["model"].unique()))
-# predict_mileage = int(st.text_input('Select Mileage', '100000'))
-# predict_capacity = int(st.text_input('Select Capacity', '1500'))
-# predict_power = int(st.text_input('Select Power', '100'))
-# predict_year = st.selectbox("Select Year", sorted(list(select_dataset(data_source)["year"].unique()), reverse=True))
-# predict_fuel = st.selectbox("Select Fuel", list(dataset["fuel"].unique()))
+# Define user inputs
+st.markdown("### Predict car price")
+predict_brand = st.selectbox("Select Brand", sorted(list(dataset["manufacturer"].unique())))
+predict_model = st.selectbox("Select Model", sorted(list(dataset[dataset["manufacturer"] == predict_brand]["model"].unique())))
+predict_mileage = int(st.text_input('Select Mileage', '100000'))
+predict_capacity = int(st.text_input('Select Capacity', '1461'))
+predict_power = int(st.text_input('Select Power', '115'))
+predict_year = int(st.selectbox("Select Year", sorted(list(select_dataset(data_source)["year"].unique()), reverse=True)))
+predict_fuel = st.selectbox("Select Fuel", sorted(list(dataset["fuel"].unique())))
 
-# # Define new input data
-# new_data = {'manufacturer': [predict_brand],
-#             'model': [predict_model], 
-#             'mileage': [predict_mileage], 
-#             'capacity': [predict_capacity], 
-#             'power': [predict_power], 
-#             'year': [predict_year], 
-#             'fuel': [predict_fuel]
-#             }
+# Define new user input for prediction
+user_input = {'manufacturer': [predict_brand],
+            'model': [predict_model], 
+            'mileage': [predict_mileage], 
+            'capacity': [predict_capacity], 
+            'power': [predict_power], 
+            'year': [predict_year], 
+            'fuel': [predict_fuel]
+            }
 
-# st.write('The predicted price is', predict_model)
+# Predict price
+if st.button("Predict", type="primary"):
+    st.markdown(f"##### `Predicted price is {str(int(make_prediction(dataset, user_input)[0]))} EUR.`")
+else:
+    st.markdown("##### Press Predict to make price prediction.")
+    
