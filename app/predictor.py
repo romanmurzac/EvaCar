@@ -19,19 +19,25 @@ def make_prediction(dataset, user_values):
     X = dataset.iloc[:, :-1].values
     y = dataset.iloc[:, -1].values
 
-    # Encode the independent categorical variables
-    ct = ColumnTransformer(transformers=[('encoder', OneHotEncoder(sparse_output=False, handle_unknown="ignore"), [0,1,6])], remainder='passthrough')
-    X = ct.fit_transform(X)
-    column_names = ct.get_feature_names_out(['manufacturer', 'model', 'mileage', 'capacity', 'power', 'year', 'fuel'])
-    X = pd.DataFrame(X, columns=column_names)
+    # Identify categorical columns
+    categorical_columns = [0, 1, 6]
+    
+    # Create transformers for numerical and categorical features
+    numeric_transformer = StandardScaler()
+    categorical_transformer = OneHotEncoder(sparse_output=False, handle_unknown="ignore")
 
+    # Create ColumnTransformer
+    preprocessor = ColumnTransformer(
+        transformers=[
+            ('numeric', numeric_transformer, ~np.isin(range(X.shape[1]), categorical_columns)),
+            ('categorical', categorical_transformer, categorical_columns)
+        ])
+
+    # Fit-transform and set column names explicitly
+    X = preprocessor.fit_transform(X)
+    
     # Split the dataset into the Training and Test sets
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25, random_state = 0)
-
-    # Standardize the features
-    sc = StandardScaler()
-    X_train = sc.fit_transform(X_train)
-    X_test = sc.transform(X_test)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=0)
 
     # Create and train the K-Nearest Neighbors Regressor
     regressor = KNeighborsRegressor(n_neighbors=5, weights='distance')
@@ -40,10 +46,8 @@ def make_prediction(dataset, user_values):
     # New set of features for prediction (original values)
     new_features_original = pd.DataFrame(user_values)
     # Transform the original features using the same ColumnTransformer
-    new_features_transformed = ct.transform(new_features_original)
-    # Standardize the transformed features using the same StandardScaler
-    new_features_standardized = sc.transform(new_features_transformed)
+    new_features_transformed = preprocessor.transform(new_features_original)
     # Make predictions for the new features
-    predicted_value = regressor.predict(new_features_standardized)
+    predicted_value = regressor.predict(new_features_transformed)
 
     return predicted_value
