@@ -108,7 +108,7 @@ Data was obtained using web scraping process using internal tool ***data_scraper
 |:---:|:---:|:---:|:---:|:---:|
 |1|RawDataDB-23-12-10.csv|10.12.2023|36534|5554|
 |2|RawDataDB-24-01-10.csv|10.01.2024|36292|6155|
-|3|-|10.02.2024|-|-|
+|3|RawDataDB-24-02-10.csv|10.02.2024|38136|6359|
 |4|-|10.03.2024|-|-|
 |5|-|10.04.2024|-|-|
 |6|-|10.05.2024|-|-|
@@ -262,11 +262,11 @@ Work in Progress
 Collected feedback from users.
 |Area|How is it now|How should be|Type|Observations|
 |:---:|:---:|:---:|:---:|:---:|
-|Repository|Incomplete|Complete|Documentation|Work in Progress|
-|Code|Unorganized|Clean|Code|Refactor code|
+|Repository|Incomplete|Complete|Documentation|Done|
+|Code|Unorganized|Clean|Code|Done|
 |Source|Autovit|olx|Code|To be connected|
 |Source|Second hand cars|New cars|Code|To be analyzed|
-|Web App|Not available|Available|Code|Work in Progress|
+|Web App|Not available|Available|Code|Done|
 |-|-|-|-|-|
 |-|-|-|-|-|
 |-|-|-|-|-|

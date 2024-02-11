@@ -2,3 +2,4 @@
 venv/
 *.docx
 report/media
+**/__pycache__/
