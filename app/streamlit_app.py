@@ -10,9 +10,11 @@ from predictor import make_prediction
 
 # *****UTILITIES*****
 # Define datasource mapping
-DATA_SOURCE = {"December 2023": "23-12-10",
+DATA_SOURCE = {"March 2024": "24-03-10",
+               "February 2024": "24-02-10",
                "January 2024": "24-01-10",
-               "February 2024": "24-02-10",}
+               "December 2023": "23-12-10",
+               }
 
 # Define path of the app location
 dir_path = os.path.dirname(os.path.realpath(__file__))
