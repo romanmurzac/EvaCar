@@ -110,7 +110,7 @@ Data was obtained using web scraping process using internal tool ***data_scraper
 |2|RawDataDB-24-01-10.csv|10.01.2024|36292|6155|
 |3|RawDataDB-24-02-10.csv|10.02.2024|38136|6359|
 |4|RawDataDB-24-03-10.csv|10.03.2024|41258|6832|
-|5|-|10.04.2024|-|-|
+|5|RawDataDB-24-04-10.csv|10.04.2024|43247|7142|
 |6|-|10.05.2024|-|-|
 |7|-|10.06.2024|-|-|
 |8|-|10.07.2024|-|-|
@@ -147,7 +147,7 @@ Data was analyzed using Python notebook ***data_analyzer.ipynb*** and saved in P
 |2|ProcessedDataDB-24-01-10.csv|10.01.2024|36292|2471|
 |3|ProcessedDataDB-24-02-10.csv|10.02.2024|38136|2591|
 |4|ProcessedDataDB-24-03-10.csv|10.03.2024|41258|2793|
-|5|-|10.04.2024|-|-|
+|5|ProcessedDataDB-24-04-10.csv|10.04.2024|43247|2928|
 |6|-|10.05.2024|-|-|
 |7|-|10.06.2024|-|-|
 |8|-|10.07.2024|-|-|
@@ -264,11 +264,9 @@ Collected feedback from users.
 |:---:|:---:|:---:|:---:|:---:|
 |Repository|Incomplete|Complete|Documentation|Done|
 |Code|Unorganized|Clean|Code|Done|
-|Source|Autovit|olx|Code|To be connected|
-|Source|Second hand cars|New cars|Code|To be analyzed|
+|Source|Autovit|olx|Code|Closed*|
+|Source|Second hand cars|New cars|Code|Closed*|
 |Web App|Not available|Available|Code|Done|
 |-|-|-|-|-|
-|-|-|-|-|-|
-|-|-|-|-|-|
-|-|-|-|-|-|
-|-|-|-|-|-|
+
+*Based on project's goals, some feedback and recommendations will be not implemented and closed without addressing it.
