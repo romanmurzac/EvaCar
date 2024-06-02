@@ -111,7 +111,7 @@ Data was obtained using web scraping process using internal tool ***data_scraper
 |3|RawDataDB-24-02-10.csv|10.02.2024|38136|6359|
 |4|RawDataDB-24-03-10.csv|10.03.2024|41258|6832|
 |5|RawDataDB-24-04-10.csv|10.04.2024|43247|7142|
-|6|-|10.05.2024|-|-|
+|6|RawDataDB-24-05-10.csv|10.05.2024|36793|6084|
 |7|-|10.06.2024|-|-|
 |8|-|10.07.2024|-|-|
 |9|-|10.08.2024|-|-|
@@ -119,7 +119,6 @@ Data was obtained using web scraping process using internal tool ***data_scraper
 |11|-|10.10.2024|-|-|
 |12|-|10.11.2024|-|-|
 |13|-|10.12.2024|-|-|
-|-|-|-|-|-|
 
 ### 4. Data collection
 #### Initial result of the stage
@@ -148,7 +147,7 @@ Data was analyzed using Python notebook ***data_analyzer.ipynb*** and saved in P
 |3|ProcessedDataDB-24-02-10.csv|10.02.2024|38136|2591|
 |4|ProcessedDataDB-24-03-10.csv|10.03.2024|41258|2793|
 |5|ProcessedDataDB-24-04-10.csv|10.04.2024|43247|2928|
-|6|-|10.05.2024|-|-|
+|6|ProcessedDataDB-24-05-10.csv|10.05.2024|36793|2488|
 |7|-|10.06.2024|-|-|
 |8|-|10.07.2024|-|-|
 |9|-|10.08.2024|-|-|
